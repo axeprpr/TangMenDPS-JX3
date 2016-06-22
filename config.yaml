@@ -1,0 +1,10 @@
+name: tmdps
+version: 5  
+  
+libraries:  
+- name: "django"  
+  version: "1.8.3"
+
+#handlers:
+#- url: /tmdps/static
+#  static_dir: path/to/tmdps/static       
