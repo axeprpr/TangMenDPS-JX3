@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" content="user-scalable=no"/>
+    <title>惊羽诀DPS计算器</title>
+    <!--loading BootStarp-->
+    <link href="/static/dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--loading Flat UI-->
+    <link href="/static/dist/css/flat-ui.css" rel="stylesheet">
+    <link href="/static/docs/assets/css/demo.css" rel="stylesheet">
+    <link href="/static/css/templatemo_style.css" rel="stylesheet" type="text/css">
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="dist/js/vendor/html5shiv.js"></script>
+      <script src="dist/js/vendor/respond.min.js"></script>
+    <![endif]-->    
+ 
+</head>
+<body>
+<div class="container">
+    <div class="demo-headline">
+        <h1 class="demo-logo">
+          惊羽诀
+          <small>DPS计算器</small>
+        </h1>
+      </div> <!-- /demo-headline -->
+<div class="col-xs-12 col-sm-4">
+ <div class="todo mrl">
+   <a class="btn btn-primary btn-block btn-large">实战BUFF增益</a>
+   <ul>
+     <li>
+       <div class="todo-icon fui-user"></div>
+       <div class="todo-content">
+         <h4 class="todo-name"><strong>秀气</strong></h4>所有属性增加37点
+       </div>
+     </li>
+     <li>
+       <div class="todo-icon fui-user"></div>
+       <div class="todo-content"    >
+         <h4 class="todo-name"><strong>雷</strong></h4>基础攻击力+5%
+       </div>
+     </li>
+     <li>
+       <div class="todo-icon fui-user"></div>
+       <div class="todo-content">
+         <h4 class="todo-name"><strong>破风</strong></h4>目标防御降低176点
+       </div>
+     </li>
+    <li>
+       <div class="todo-icon fui-user"></div>
+       <div class="todo-content">
+         <h4 class="todo-name"><strong>碎星辰</strong></h4>会心加5%会笑加10%
+       </div>
+     </li>
+     <li>
+       <div class="todo-icon fui-user"></div>
+       <div class="todo-content">
+         <h4 class="todo-name"><strong>梅影香</strong></h4>命中+3%破防+10%
+       </div>
+     </li>
+     <li>
+       <div class="todo-icon fui-user"></div>
+       <div class="todo-content">
+         <h4 class="todo-name"><strong>丐帮喝酒</strong></h4>会心增加10%
+       </div>
+     </li>
+      <li>
+       <div class="todo-icon fui-user"></div>
+       <div class="todo-content">
+         <h4 class="todo-name"><strong>雷锋箭</strong></h4>外功伤害加5%
+       </div>
+     </li>
+     <li>
+       <div class="todo-icon fui-user"></div>
+       <div class="todo-content">
+         <h4 class="todo-name"><strong>盾飞</strong></h4>外功伤害加5%
+       </div>
+     </li>
+   </ul>
+<script src="/static/dist/js/vendor/jquery.min.js"></script>
+<script>
+var xiuqi,lei,pofeng,suixc,xiang,jiu,leifeng,dunfei;
+$(function(){ 
+  $("ul li:eq(0)").click(function(){
+    if(xiuqi++ %2 ==0){xiuqi=1;}
+    else{xiuqi=0;}
+  });
+  $("ul li:eq(1)").click(function(){
+    if(lei++ %2 ==0){lei=1;}
+    else{lei=0;}
+  });
+  $("ul li:eq(2)").click(function(){
+    if(pofeng++ %2 ==0){pofeng=1;}
+    else{pofeng=0;}
+  });
+  $("ul li:eq(3)").click(function(){
+    if(suixc++ %2 ==0){suixc=1;}
+    else{suixc=0;}
+  });
+  $("ul li:eq(4)").click(function(){
+    if(xiang++ %2 ==0){xiang=1;}
+    else{xiang=0;}
+  });
+  $("ul li:eq(5)").click(function(){
+    if(jiu++ %2 ==0){jiu=1;}
+    else{jiu=0;}
+  });
+  $("ul li:eq(6)").click(function(){
+    if(leifeng++ %2 ==0){leifeng=1;}
+    else{leifeng=0;}
+  });
+  $("ul li:eq(7)").click(function(){
+  if(dunfei %2 ==0){dunfei=1;}
+  else{dunfei=0;}
+  });
+});
+ </script>
+ </div><!-- /.todo -->
+ 
+<div class="accordion-group mrl">
+<div class="accordion-heading">
+<a class="btn btn-primary btn-block btn-large" data-toggle="collapse" data-parent="#accordion2" name="dp_mj" id="dp_mj" href="#夺魄">夺魄</a>
+</div>
+<div id="夺魄" class="accordion-body collapse" style="height: 0px; ">
+<div class="accordion-inner">
+<div class="share">
+  <ul>
+  <li>
+<label class="share-label" for="share-toggle4">&nbsp&nbsp2本减CD</label>
+     <input type="checkbox" checked disabled data-toggle="switch" name="dp_cd" id="dp_cd" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp伤害+3%</label>
+     <input type="checkbox"  data-toggle="switch" name="dp_d3" id="dp_d3"value="On" />
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp伤害+4%</label>
+     <input type="checkbox"  data-toggle="switch" name="dp_d4" id="dp_d4" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp会心+3%</label>
+     <input type="checkbox"  data-toggle="switch" name="dp_c3" id="dp_c3" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp会心+4%</label>
+     <input type="checkbox" checked="" data-toggle="switch" name="dp_c4" id="dp_c4" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp会心+5%</label>
+     <input type="checkbox" checked="" data-toggle="switch" name="dp_c5" id="dp_c5" value="On"/>
+ </li>
+ </ul>
+</div>
+ </div>
+  </div>
+   
+                  
+ <div class="accordion-heading">
+     <a class="btn btn-inverse btn-block btn-large" data-toggle="collapse" data-parent="#accordion2" href="#追命">
+       追命
+     </a>
+   </div>
+   <div id="追命" class="accordion-body collapse" style="height: 0px; ">
+   <div class="accordion-inner">
+    <div class="share">
+  <ul>
+  <li>
+<label class="share-label" for="share-toggle4">&nbsp&nbsp两本减CD</label>
+     <input type="checkbox" checked="" data-toggle="switch" name="zm_cd" id="zm_cd" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp伤害+3%</label>
+     <input type="checkbox"  data-toggle="switch" name="zm_d3" id="zm_d3" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp伤害+4%</label>
+     <input type="checkbox"  data-toggle="switch" name="zm_d4" id="zm_d4" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp伤害+5%</label>
+     <input type="checkbox" checked="" data-toggle="switch" name="zm_d5" id="zm_d5" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp会心+3%</label>
+     <input type="checkbox"  data-toggle="switch" name="zm_c3" id="zm_c3" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp会心+4%</label>
+     <input type="checkbox"  data-toggle="switch" name="zm_c4" id="zm_c4" value="On"/>
+ </li>
+ <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp破防20%</label>
+     <input type="checkbox" checked disabled data-toggle="switch" name="zm_dd" id="zm_dd" value="On"/>
+ </li>
+ </ul>
+</div>
+   </div>
+  </div>
+
+ <div class="accordion-heading">
+     <a class="btn btn-primary btn-block btn-large" data-toggle="collapse" data-parent="#accordion2" href="#化血镖">
+       化血镖
+     </a>
+   </div>
+   <div id="化血镖" class="accordion-body collapse" style="height: 0px; ">
+   <div class="accordion-inner">
+   <div class="share">
+  <ul>
+  <li>
+<label class="share-label" for="share-toggle4">&nbsp&nbsp持续+3S</label>
+     <input type="checkbox" checked disabled data-toggle="switch" name="hx_cx" id="hx_cx" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp伤害+3%</label>
+     <input type="checkbox" checked="" data-toggle="switch" name="hx_d3" id="hx_d3" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp伤害+4%</label>
+     <input type="checkbox" checked="" data-toggle="switch" name="hx_d4" id="hx_d4" value="On"/>
+ </li>
+ </ul>
+</div>
+   </div>
+  </div>
+
+ <div class="accordion-heading">
+     <a class="btn btn-inverse btn-block btn-large" data-toggle="collapse" data-parent="#accordion2" href="#穿心弩">
+       穿心弩
+     </a>
+   </div>
+   <div id="穿心弩" class="accordion-body collapse" style="height: 0px; ">
+   <div class="accordion-inner">
+     <div class="share">
+  <ul>
+  <li>
+<label class="share-label" for="share-toggle4">&nbsp&nbsp持续+3S</label>
+     <input type="checkbox" checked disabled data-toggle="switch" name="cx_cx" id="cx_cx" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp伤害+5%</label>
+     <input type="checkbox" checked="" data-toggle="switch" name="cx_d5" id="cx_d5" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp伤害+10%</label>
+     <input type="checkbox" checked="" data-toggle="switch" name="cx_d10" id="cx_d10" value="On"/>
+ </li>
+ </ul>
+</div>
+   </div>
+  </div>
+
+ <div class="accordion-heading">
+     <a class="btn btn-primary btn-block btn-large" data-toggle="collapse" data-parent="#accordion2" href="#逐星箭">
+       逐星箭
+     </a>
+   </div>
+   <div id="逐星箭" class="accordion-body collapse" style="height: 0px; ">
+   <div class="accordion-inner">
+    <div class="share">
+  <ul>
+  <li>
+<label class="share-label" for="share-toggle4">&nbsp&nbsp持续+2S</label>
+     <input type="checkbox" checked disabled data-toggle="switch" name="zx_cx" id="zx_cx" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp伤害+3%</label>
+     <input type="checkbox" checked="" data-toggle="switch" name="zx_d3" id="zx_d3" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp伤害+4%</label>
+     <input type="checkbox" checked="" data-toggle="switch" name="zx_d4" id="zx_d4" value="On"/>
+ </li>
+ <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp伤害+5%</label>
+     <input type="checkbox" checked="" data-toggle="switch" name="zx_d5" id="zx_d5" value="On"/>
+ </li>
+ </ul>
+</div>
+   </div>
+  </div>
+
+<div class="accordion-heading">
+     <a class="btn btn-inverse btn-block btn-large" data-toggle="collapse" data-parent="#accordion2" href="#暴雨梨花针">
+       暴雨梨花针
+     </a>
+   </div>
+   <div id="暴雨梨花针" class="accordion-body collapse" style="height: 0px; ">
+   <div class="accordion-inner">
+        <div class="share">
+  <ul>
+  <li>
+<label class="share-label" for="share-toggle4">&nbsp&nbsp气魄</label>
+     <input type="checkbox" checked="" data-toggle="switch" name="by_qp" id="by_qp" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp伤害+3%</label>
+     <input type="checkbox" data-toggle="switch" name="by_d3" id="by_d3" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp伤害+4%</label>
+     <input type="checkbox" checked="" data-toggle="switch" name="by_d4" id="by_d4" value="On"/>
+ </li>
+ <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp伤害+5%</label>
+     <input type="checkbox" checked="" data-toggle="switch" name="by_d5" id="by_d5" value="On"/>
+</li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp会心+3%</label>
+     <input type="checkbox"  data-toggle="switch" name="by_c3" id="by_c3" value="On"/>
+ </li>
+  <li>
+   <label class="share-label" for="share-toggle4">&nbsp&nbsp会心+4%</label>
+     <input type="checkbox" checked="" data-toggle="switch" name="by_c4" id="by_c4" value="On"/>
+ </li>
+ </ul>
+</div>
+   </div>
+  </div>
+ </div>
+
+ 
+</div><!-- /.col-xs-4 -->
+     
+<div class="col-xs-12 col-sm-4">
+<div class="share mrl">
+
+  <a class="btn btn-primary btn-block btn-large">阵眼&小药选择</a>
+
+   <ul>
+    <li>
+   <select class="form-control select select-primary" name="zhengyan" id="zhenyan" data-toggle="select">
+            <option value="0" selected>无阵眼</option>
+            <option value="1">丐帮阵</option>
+            <option value="2">天策阵</option>
+            <option value="3">藏剑阵</option>
+            <option value="4">剑纯阵</option>
+            <option value="5">惊羽阵</option>
+          </select>
+     </li>
+     <li>
+     <li>
+       <select class="form-control select select-primary" name="xiaoyao_1" id="xiaoyao_1" data-toggle="select">
+         <option value="0" selected>辅助小药</option>
+         <option value="1">力道+46</option>
+         <option value="2">力道+41</option>
+       </select>
+     </li>
+     <li>
+      <li>
+       <select class="form-control select select-primary" name="xiaoyao_2" id="xiaoyao_2" data-toggle="select">
+         <option value="0" selected>增强小药</option>
+         <option value="1">会心+125</option>
+         <option value="2">会心+111</option>
+         <option value="3">破防+49</option>
+       </select>
+     </li>
+     <li>
+      <li>
+       <select class="form-control select select-primary" name="xiaochi_1" id="xiaochi_1" data-toggle="select">
+         <option value="0" selected>辅助小吃</option>
+         <option value="1">力道+46</option>
+         <option value="2">力道+41</option>
+       </select>
+     </li>
+     <li>
+      <li>
+       <select class="form-control select select-primary" name="xiaochi_1" id="xiaochi_2" data-toggle="select">
+         <option value="0" selected>增强小吃</option>
+           <option value="1">破防+49</option>
+         <option value="2">攻击+36</option>
+       </select>
+       </li>
+       <li>
+       <li>
+       <select class="form-control select select-primary" name="wuqi_fumo" id="wuqi_fumo" data-toggle="select">
+         <option value="0" selected>武器附魔</option>
+         <option value="1">攻击+55</option>
+             <option value="2">武伤+13</option>
+       </select>
+     </li>
+     <li>
+<li>
+     <label class="share-label" for="share-toggle4">&nbsp&nbsp大附魔</label>
+     <input type="checkbox" data-toggle="switch" name="dafumo" id="dafumo" value="On"/>
+     </li>
+    <li>
+       <label class="share-label" for="share-toggle4">&nbsp&nbsp烧尾宴</label>
+       <input type="checkbox" data-toggle="switch" name="shaoweiyan" id="shaoweiyan" value="On"/>
+     </li>
+     <li>
+       <label class="share-label" for="share-toggle6">&nbsp&nbsp蒸鱼</label>
+       <input type="checkbox" data-toggle="switch" name="zhengyu" id="zhengyu" value="On"/>
+     </li>
+      <li>
+       <label class="share-label" for="share-toggle6">&nbsp&nbsp彩球</label>
+       <input type="checkbox" data-toggle="switch" name="caiqiu" id="caiqiu" value="On"/>
+     </li>
+     <li>
+   </ul>
+</div> <!-- /share -->
+
+
+ <a>&nbsp </a>
+ <div class="share mrl">
+   <a class="btn btn-primary btn-block btn-large">奇穴调整</a>
+   <ul>
+    <li>
+   <select class="form-control select select-primary" name="qixue_1" id="qixue_1" data-toggle="select">
+            <option value="0" selected>夺魄双会+10%</option>
+            <option value="1">夺魄伤害+10%</option>
+            <option value="2">逐星+3跳</option>
+          </select>
+     </li>
+     <li>
+      <li>
+   <select class="form-control select select-primary" name="qixue_2" id="qixue_2" data-toggle="select">
+            <option value="0" selected>追命伤害+10%</option>
+            <option value="1">外功伤害+5%</option>
+          </select>
+     </li>
+     <li>
+      <li>
+   <select class="form-control select select-primary" name="qixue_3" id="qixue_3" data-toggle="select">
+            <option value="0" selected>15尺外双会+10%</option>
+            <option value="1">追命CD-2S</option>
+          </select>
+     </li>
+ </div>
+
+</div><!-- /.col-xs-4 -->
+
+ <div class="col-xs-12 col-sm-4">
+  <div class="share mrl">
+   <a class="btn btn-primary btn-block btn-large">基础面板</a>
+  <ul>
+   <li>
+    <input type="text" class="form-control" id="lidao" name="lidao" placeholder="力道  举栗:888">
+   </li>
+   <li>
+   <li>
+    <input type="text" class="form-control" id="ATK" name="ATK" placeholder="面板攻击  举栗:3800">
+   </li>
+   <li>     
+   <li>
+    <input type="text" class="form-control" id="CR" name="CR" placeholder="会心率  举栗:20">
+   </li>
+   <li>    
+   <li>
+    <input type="text" class="form-control" id="CD" name="CD" placeholder="会心效果  举栗:200">
+   </li>
+   <li>  
+   <li>
+    <input type="text" class="form-control" id="DD" name="DD" placeholder="破防  举栗:45">
+   </li>
+   <li>   
+   <li>
+    <input type="text" class="form-control" id="HR" name="HR" placeholder="命中率  举栗:107">
+   </li>
+   <li>    
+   <li>
+    <input type="text" class="form-control" id="TR" name="TR" placeholder="无双  举栗:27">
+   </li>
+   <li>        
+   <li>
+   <input type="text" class="form-control" id="yanchi" name="yanchi" placeholder="延迟  举栗:50 可为0">
+   </li>
+   <li>        
+   <li>
+   <select class="form-control select select-primary" name="muzhuang" id="muzhuang" data-toggle="select">
+            <option value="0">96级木桩</option>
+            <option value="1" selected>97级木桩</option>
+            <option value="2">98级木桩</option>
+          </select>
+   </li>
+   <li>    
+   <li>
+   <select class="form-control select select-primary" name="jiasu" id="jiasu" data-toggle="select">
+            <option value="0">零段加速</option>
+            <option value="1">一段加速</option>
+            <option value="2" selected>二段加速</option>
+            <option value="3">三段加速</option>
+            <option value="4">四段加速</option>
+          </select>
+   </li>
+   <li>
+   <li>
+    <select class="form-control select select-primary" name="wuqi" id="wuqi" data-toggle="select">
+            <option value="0">820品武器</option>
+            <option value="1" selected>900品武器</option>
+            <option value="2">1000品武器</option>
+            <option value="3">1080品武器</option>
+          </select>
+   </li>
+   <li>
+   <li>
+  <select class="form-control select select-primary" name="wucaishi" id="wucaishi" data-toggle="select">
+            <option value="0">非武伤五彩石</option>
+            <option value="1">四级五彩石</option>
+            <option value="2">五级五彩石</option>
+            <option value="3" selected>六级五彩石</option>
+          </select>
+   </li>
+   <li> 
+     <li>
+  <label class="share-label" for="share-toggle4">&nbsp&nbsp套装+攻击</label>
+  <input type="checkbox" data-toggle="switch" name="taozhuang_1" id="taozhuang_1" value="On"/>
+ </li>
+ <li>
+ <li>
+  <label class="share-label" for="share-toggle4">&nbsp&nbsp套装+夺魄</label>
+  <input type="checkbox" data-toggle="switch" name="taozhuang_2" id="taozhuang_2" value="On"/>
+</li>
+<li>
+<li>
+  <label class="share-label" for="share-toggle4">&nbsp&nbsp水特效·灭</label>
+  <input type="checkbox" data-toggle="switch" name="taozhuang_3" id="taozhuang_3" value="On"/>
+ </li>
+<li>     
+</ul>
+<a class="btn btn-success btn-block btn-large" data-toggle="modal" data-target="#myModal" id="begin" name="begin">开始计算</a>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+×
+</button>
+<h4 class="modal-title" id="myModalLabel">
+DPS统计
+</h4>
+</div>
+<p>
+&nbsp&nbspDPS: <span style="font-size:25px" id="dps"></span><br>  
+&nbsp&nbsp总伤害: <span id="sum"></span> 
+&nbsp&nbsp总时间: <span id="timeall"></span><br>
+&nbsp&nbsp心无总数：<span id="xw_count"></span>&nbsp&nbsp暴雨总数：<span id="by_count"></span><br>
+&nbsp&nbsp夺魄总数：<span id="dp_count"></span>&nbsp&nbsp追命总数：<span id="zm_count"></span><br>
+&nbsp&nbsp逐星总数：<span id="zx_count"></span>&nbsp&nbsp罡风总数：<span id="gf_count"></span><br>
+
+
+</p> 
+<div class="modal-footer">
+<a class="btn btn-primary" data-dismiss="modal">关闭</a>
+</div>
+</div>
+</div>
+</div>       
+</div>
+</form>
+<script src="/static/dist/js/vendor/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#begin").click(function(){
+var dp_d3=$('input[name="dp_d3"]:checked').val();
+var dp_d4=$('input[name="dp_d4"]:checked').val();
+var dp_c3=$('input[name="dp_c3"]:checked').val();
+var dp_c4=$('input[name="dp_c4"]:checked').val();
+var dp_c5=$('input[name="dp_c5"]:checked').val();
+var zm_cd=$('input[name="zm_cd"]:checked').val();
+var zm_d3=$('input[name="zm_d3"]:checked').val();
+var zm_d4=$('input[name="zm_d4"]:checked').val();
+var zm_d5=$('input[name="zm_d5"]:checked').val();
+var zm_c3=$('input[name="zm_c3"]:checked').val();
+var zm_c4=$('input[name="zm_c4"]:checked').val();
+var zm_dd=$('input[name="zm_dd"]:checked').val();
+var hx_cx=$('input[name="hx_cx"]:checked').val();
+var hx_d3=$('input[name="hx_d3"]:checked').val();
+var hx_d4=$('input[name="hx_d4"]:checked').val();
+var cx_cx=$('input[name="cx_cx"]:checked').val();
+var cx_d5=$('input[name="cx_d5"]:checked').val();
+var cx_d10=$('input[name="cx_d10"]:checked').val();
+var zx_cx=$('input[name="zx_cx"]:checked').val();
+var zx_d3=$('input[name="zx_d3"]:checked').val();
+var zx_d4=$('input[name="zx_d4"]:checked').val();
+var zx_d5=$('input[name="zx_d5"]:checked').val();
+var by_d3=$('input[name="by_d3"]:checked').val();
+var by_qp=$('input[name="by_qp"]:checked').val();
+var by_d4=$('input[name="by_d4"]:checked').val();
+var by_d5=$('input[name="by_d5"]:checked').val();
+var by_c3=$('input[name="by_c3"]:checked').val();
+var by_c4=$('input[name="by_c4"]:checked').val();
+var zhenyan=$("#zhenyan").val();
+var xiaoyao_1=$("#xiaoyao_1").val();
+var xiaoyao_2=$("#xiaoyao_2").val();
+var xiaochi_1=$("#xiaochi_1").val();
+var xiaochi_2=$("#xiaochi_2").val();
+var wuqi_fumo=$("#wuqi_fumo").val();
+var dafumo=$('input[name="dafumo"]:checked').val();
+var shaoweiyan=$('input[name="shaoweiyan"]:checked').val();
+var zhengyu=$('input[name="zhengyu"]:checked').val();
+var caiqiu=$('input[name="caiqiu"]:checked').val();
+var qixue_1=$("#qixue_1").val();
+var qixue_2=$("#qixue_2").val();
+var qixue_3=$("#qixue_3").val();
+var lidao=parseFloat($("#lidao").val());
+var ATK=parseFloat($("#ATK").val());
+var CR=parseFloat($("#CR").val());
+var CD=parseFloat($("#CD").val());
+var DD=parseFloat($("#DD").val());
+var HR=parseFloat($("#HR").val());
+var TR=parseFloat($("#TR").val());
+var yanchi=parseFloat($("#yanchi").val());
+var muzhuang=$("#muzhuang").val();
+var jiasu=$("#jiasu").val();
+var wuqi=$("#wuqi").val();
+var wucaishi=$("#wucaishi").val();
+var taozhuang_1=$('input[name="taozhuang_1"]:checked').val();
+var taozhuang_2=$('input[name="taozhuang_2"]:checked').val();
+var taozhuang_3=$('input[name="taozhuang_3"]:checked').val();
+
+var BATK=ATK-lidao*1.45;
+var DDP=1,mzfy,WD_min,WD_max,ggcd;
+var dp_ex_dmg=1,zm_ex_dmg=1,zx_ex_dmg=1,by_ex_dmg=1,hx_ex_dmg=1,cx_ex_dmg=1;
+var zm_ex_CR=0,zm_ex_CD=0,dp_ex_CR=0,dp_ex_CD=0,by_ex_CR=0,by_ex_CD=0,zx_ex_CR=0,zx_ex_CD=0,zx_t3=0;
+var ZM_CD=12;
+var UHR,UTR;
+
+<!-- 基础 -->
+CR/=100;CD/=100;HR/=100;TR/=100;DD/=100;yanchi/=1000;
+
+switch(jiasu){
+case "0":ggcd=1.5;dot_cd=3;break;
+case "1":ggcd=1.44;dot_cd=2.94;break;
+case "2":ggcd=1.38;dot_cd=2.88;break;
+case "3":ggcd=1.31;dot_cd=2.75;break;
+case "4":ggcd=1.25;dot_cd=2.63;break;};
+switch(wuqi){
+case "0":WD_min=127;WD_max=211;break;
+case "1":WD_min=139;WD_max=232;break;
+case "2":WD_min=154;WD_max=257;break;
+case "3":WD_min=167;WD_max=278;break;};
+switch(wucaishi){
+case "0":break;
+case "1":WD_min+=146;WD_max+=146;break;
+case "2":WD_min+=183;WD_max+=183;break;
+case "3":WD_min+=219;WD_max+=219;break;};
+switch(taozhuang_1){
+case "On":ATK+=BATK*0.05;break;
+default:break;}
+switch(taozhuang_2){
+case "On":dp_ex_dmg+=0.1;break;
+default:break;};
+switch(taozhuang_3){
+case "On":ATK+=70;break;
+default:break;};
+
+if(xiuqi==0){ATK+=60;};
+if(lei==0){ATK+=BATK*0.05;};
+if(pofeng==0){mzfy-=0.05;};
+if(suixc==0){CR+=0.05;CD+=0.1;};
+if(xiang==0){HR+=0.03;DD*=1.1;};
+if(jiu==0){CR+=0.1;};
+if(leifeng==0){DDP+=0.05;};
+if(dunfei==0){DDP+=0.05;};
+
+switch(zhenyan){
+case "0":break;
+case "1":DD+=0.11;DD*=1.2;ATK+=BATK*0.05;break;
+case "2":DD*=1.2;ATK+=BATK*0.05;break;
+case "3":ATK+=BATK*0.05;CD+=0.2;break;
+case "4":CR+=0.08;CD+=0.1;HR+=0.03;break;
+case "5":ATK+=50;DD*=1.1;HR+=0.03;CR+=0.05;break;};
+switch(xiaoyao_1){
+case "0":break;
+case "1":ATK+=74;break;
+case "2":ATK+=66;break;};
+switch(xiaoyao_2){
+case "0":break;
+case "1":CR+=0.02;break;
+case "2":CR+=0.02;break;
+case "3":DD+=0.01;break;};
+switch(xiaochi_1){
+case "0":break;
+case "1":ATK+=74;break;
+case "2":ATK+=66;break;};
+switch(xiaochi_2){
+case "0":break;
+case "1":DD+=0.01;break;
+case "2":ATK+=36;break;};
+switch(wuqi_fumo){
+case "0":break;
+case "1":ATK+=36;break;
+case "2":WD_max+=13;WD_min+=13;break;};
+switch(dafumo){
+case "On":dafumo=1;break;
+default:dafumo=0;break;};
+switch(shaoweiyan){
+case "On":ATK+=63;break;
+default:break;};
+switch(zhengyu){
+case "On":HR+=0.03;TR+=0.02;break;
+default:break;};
+switch(caiqiu){
+case "On":ATK+=10;break;
+default:break;};
+
+
+
+<!-- 技能加成 -->
+if (dp_d3=="On"){dp_ex_dmg+=0.03};
+if (dp_d4=="On"){dp_ex_dmg+=0.04};
+if (dp_c3=="On"){dp_ex_CR+=0.03};
+if (dp_c4=="On"){dp_ex_CR+=0.04};
+if (dp_c5=="On"){dp_ex_CR+=0.05};
+
+if (zm_cd=="On"){ZM_CD-=2};
+if (zm_d3=="On"){zm_ex_dmg+=0.03};
+if (zm_d4=="On"){zm_ex_dmg+=0.04};
+if (zm_d5=="On"){zm_ex_dmg+=0.05};
+if (zm_c3=="On"){zm_ex_CR+=0.03};
+if (zm_c4=="On"){zm_ex_CR+=0.04};
+
+if (hx_d3=="On"){hx_ex_dmg+=0.03};
+if (hx_d4=="On"){hx_ex_dmg+=0.04};
+
+if (cx_d5=="On"){cx_ex_dmg+=0.04};
+if (cx_d10=="On"){cx_ex_dmg+=0.04};
+
+if (zx_d3=="On"){zx_ex_dmg+=0.03};
+if (zx_d4=="On"){zx_ex_dmg+=0.04};
+if (zx_d5=="On"){zx_ex_dmg+=0.05};
+
+if (by_d3=="On"){by_ex_dmg+=0.03};
+if (by_d4=="On"){by_ex_dmg+=0.04};
+if (by_d5=="On"){by_ex_dmg+=0.05};
+if (by_c3=="On"){by_ex_CR+=0.03};
+if (by_c4=="On"){by_ex_CR+=0.04};
+
+switch(qixue_1){
+case "0":dp_ex_CR+=0.1;dp_ex_CD+=0.1;break;
+case "1":dp_ex_dmg+=0.1;break;
+case "2":zx_t3=1;break;};
+switch(qixue_2){
+case "0":zm_ex_dmg+=0.1;break;
+case "1":if(leifeng==0){break;}else{DDP+=0.05;};break;};
+switch(qixue_3){
+case "0":CR+=0.1;CD+=0.1;break;
+case "1":ZM_CD-=2;break;};
+
+switch(muzhuang){
+case "0":mzfy=0.85;if(HR>1.05){UHR=0;}else{UHR=1.05-HR};if(TR>0.2){UTR=0;}else{UTR=0.2-TR};break;
+case "1":mzfy=0.75;if(HR>1.05){UHR=0;}else{UHR=1.05-HR};if(TR>0.2){UTR=0;}else{UTR=0.2-TR};break;
+case "2":mzfy=0.65;if(HR>1.1){UHR=0;}else{UHR=1.1-HR};if(TR>0.3){UTR=0;}else{UTR=0.3-TR};break;};
+
+dp_ex_CR+=0.1;
+by_ex_CR+=0.15;by_ex_CD+=0.3;
+if(by_qp=="On"){ATK+=lidao*0.05*1.60869}else{by_qp="Off"};
+ggcd+=yanchi*2
+$.get("/DPS/",{
+'ATK':ATK,
+'CR':CR,
+'CD':CD,
+'UTR':UTR,
+'UHR':UHR,
+'DD':DD,
+'WD_max':WD_max,
+'WD_min':WD_min,
+'ggcd':ggcd,
+'DDP':DDP,
+'mzfy':mzfy,
+'dafumo':dafumo,
+'ZM_CD':ZM_CD,
+'dp_ex_dmg':dp_ex_dmg,
+'zm_ex_dmg':zm_ex_dmg,
+'zx_ex_dmg':zx_ex_dmg,
+'by_ex_dmg':by_ex_dmg,
+'hx_ex_dmg':hx_ex_dmg,
+'cx_ex_dmg':cx_ex_dmg,
+'zm_ex_CR':zm_ex_CR,
+'zm_ex_CD':zm_ex_CD,
+'dp_ex_CR':dp_ex_CR,
+'dp_ex_CD':dp_ex_CD,
+'by_ex_CR':by_ex_CR,
+'by_ex_CD':by_ex_CD,
+'zx_ex_CR':zx_ex_CR,
+'zx_ex_CD':zx_ex_CD,
+'zx_t3':zx_t3,
+'dot_cd':dot_cd,
+'by_qp':by_qp
+},function(ret){
+//$('#result').html(ret)
+var arr=eval(ret);
+document.getElementById("dps").innerHTML=arr.dps  
+document.getElementById("sum").innerHTML=arr.sum 
+document.getElementById("timeall").innerHTML=arr.timeall
+document.getElementById("xw_count").innerHTML=arr.xw_count
+document.getElementById("zm_count").innerHTML=arr.zm_count
+document.getElementById("dp_count").innerHTML=arr.dp_count
+document.getElementById("zx_count").innerHTML=arr.zx_count
+document.getElementById("by_count").innerHTML=arr.by_count
+document.getElementById("gf_count").innerHTML=arr.gf_count
+});
+});
+});
+
+</script>
+</div><!--/.col-xs-6-->
+
+</div> <!-- /container -->
+
+    <script src="/static/dist/js/vendor/jquery.min.js"></script>
+    <script src="/static/dist/js/flat-ui.min.js"></script>
+    <script src="/static/docs/assets/js/application.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('select[name="inverse-dropdown"], select[name="inverse-dropdown-optgroup"], select[name="inverse-dropdown-disabled"]').select2({dropdownCssClass: 'select-inverse-dropdown'});
+
+        $('select[name="searchfield"]').select2({dropdownCssClass: 'show-select-search'});
+        $('select[name="inverse-dropdown-searchfield"]').select2({dropdownCssClass: 'select-inverse-dropdown show-select-search'});
+      });
+      
+    </script>
+
+</body>
+</html>
+<!--
