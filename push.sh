@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
- git commit -m WTF? 
+ git commit -a -m WTF? 
  git push origin master
